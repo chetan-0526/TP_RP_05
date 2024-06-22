@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div
+        style="background-color: aqua;display:inline-block;height: 150px;width: 250px;text-align: center;">
+        <h1>My Todo List</h1>
+        <input type="text" id="task" placeholder="Enter your task" style="border-radius: 2px;">
+        <button onclick="adding()" style="background-color: rgb(28, 0, 130);color: aliceblue;">Add</button>
+
+    </div>
+    <div>
+        <ul id="listitem">
+
+        </ul>
+    </div>
+    <script>
+        function adding() {
+            var task = document.getElementById("task").value;
+            var ul = document.getElementById("listitem");
+            var li = document.createElement("li");
+            li.innerText = task;
+            ul.appendChild(li);
+            //var button = document.("listitem");
+            //button.innertext = 'complete';
+            //ul.appendChild(button);
+            
+            
+
+
+
+        }
+    </script>
+</body>
+
+</html>

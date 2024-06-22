@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+</head>
+
+<body>
+    <!-- OUtput -->
+    <div
+        style="border: 1px solid black;height: 500px;width: 400px;margin-left: 500px;margin-top: 100px;border-radius: 10px;">
+        <center>
+            <h1 style="margin-top: 30px;color: darkorchid;">MY CALCULATOR</h1>
+        </center>
+        <div id="result"
+            style="border: 2px solid black;height: 40px;width: 300px;margin-top: 50px;margin-left: 50px;font-size: 30px;border-radius: 5px">
+        </div>
+
+        <div>
+            <div style="display: flex;justify-content: space-between;margin-top: 50px;">
+                <button onclick="handleNumbers(7)"
+                    style="height: 40px;width: 40px;margin-left: 50px;font-size: 30px;border-radius: 5px;">7</button>
+                <button onclick="handleNumbers(8)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">8</button>
+                <button onclick="handleNumbers(9)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">9</button>
+                <button onclick="handleOperations('+')"
+                    style="height: 40px;width: 40px;margin-right: 50px;background-color: cadetblue;font-size: 30px;border-radius: 5px">+</button>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-top: 30px;">
+                <button onclick="handleNumbers(4)"
+                    style="height: 40px;width: 40px;margin-left: 50px;font-size: 30px;border-radius: 5px;">4</button>
+                <button onclick="handleNumbers(5)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">5</button>
+                <button onclick="handleNumbers(6)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">6</button>
+                <button onclick="handleOperations('-')"
+                    style="height: 40px;width: 40px;margin-right: 50px;font-size: 30px;background-color: cadetblue;border-radius: 5px">-</button>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-top: 30px;">
+                <button onclick="handleNumbers(1)"
+                    style="height: 40px;width: 40px;margin-left: 50px;font-size: 30px;border-radius: 5px">1</button>
+                <button onclick="handleNumbers(2)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">2</button>
+                <button onclick="handleNumbers(3)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">3</button>
+                <button onclick="handleOperations('*')"
+                    style="height: 40px;width: 40px;margin-right: 50px;font-size: 30px;background-color: cadetblue;border-radius: 5px;">*</button>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-top: 30px;">
+                <button id="clear" onclick="cancel('C')"
+                    style="height: 40px;width: 40px;margin-left: 50px;font-size: 30px;background-color: cadetblue;border-radius: 5px">C</button>
+                <button onclick="handleNumbers(0)"
+                    style="height: 40px;width: 40px;font-size: 30px;border-radius: 5px">0</button>
+                <button onclick="handleResult('=')"
+                    style="height: 40px;width: 40px;font-size: 30px;background-color: cadetblue;border-radius: 5px">=</button>
+                <button onclick="handleOperations('/')"
+                    style="height: 40px;width: 40px;margin-right: 50px;font-size: 30px;background-color: cadetblue;border-radius: 5px;">/</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var data = "";
+        function updateResult(value) {
+            document.getElementById("result").innerHTML = value;
+
+
+
+        }
+        function handleNumbers(number) {
+            data += number;
+            console.log(data);
+            updateResult(data);
+        }
+        function handleOperations(operator) {
+            data += operator;
+            console.log(data);
+            updateResult(data);
+        }
+        function handleResult() {
+
+            var result = eval(data);
+            updateResult(result)
+        }
+        function cancel() {
+            data = "";
+            updateResult("");
+
+        }
+
+    </script>
+</body>
+
+</html>
